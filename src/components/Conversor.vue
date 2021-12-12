@@ -8,13 +8,14 @@
 </template>
 
 <script>
+
 export default {
   name: "Conversor",
   props: ["moedaA", "moedaB"],
   data() {
     return {
       moedaA_value: "",
-      moedaB_value: 0
+      moedaB_value: 0,
     };
   },
   methods: {
@@ -25,21 +26,28 @@ export default {
         de_para +
         "&compact=ultra&apiKey=a01c59ad0e41a8ae9fc4";
 
-      fetch(url).then(res =>{return res.json()})
-                .then(json=>{
-                    let cotacao = json[de_para]
-                    this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(2)
-                })
-            }
-        }
-    }
+      fetch(url)
+        .then((res) => {
+          return res.json();
+        })
+        .then((json) => {
+          let cotacao = json[de_para];
+          this.moedaB_value = (cotacao * parseFloat(this.moedaA_value)).toFixed(
+            2
+          );
+        });
+    },
+  
+  },
+};
 </script>
 
-<style scoped>
 
-.conversor{
-    padding: 20px;
-    max-width: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+<style scoped>
+.conversor {
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 </style>

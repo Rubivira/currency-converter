@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <h1 class="title">Conversor de Moedas</h1>
     <div class="linha">
       <Conversor moeda-a="USD" moeda-b="BRL" />
@@ -27,23 +27,24 @@ export default {
 </script>
 
 <style>
-#app {
-  margin: auto;
+.app {
   max-width: 900px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin: auto;
+  margin-top: 60px;
+  font-family: "Avenir, Helvetica, Arial", sans-serif;
+  color: #2c3e50;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin-top: 60px;
+  
 }
 
-.linha{
+.linha {
   margin-top: 40px;
   display: flex;
   justify-content: space-around;
 }
 
-.title{
+.title {
   text-align: center;
 }
 </style>
